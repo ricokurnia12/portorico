@@ -1,0 +1,15 @@
+GET http://localhost:5000/users
+Authorization: Bearer
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJyaWNvIiwiZW1haWwiOiJyaWNvbWFpbEBnbWFpbC5jb20iLCJpYXQiOjE2ODAxNDUzNzgsImV4cCI6MTY4MDE0NTM5M30.Wl5DbdR2o5K6HAYBUI_wBEec6F5uR7ysl9zn73SHba4
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"ricomail@gmail.com",
+    "password": "12345"
+}
+
+###
+GET  http://localhost:5000/token
