@@ -51,7 +51,7 @@ export const Login = async (req, res) => {
       { userId, name, email },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: '60s',
+        expiresIn: '15s',
       }
     );
     const refreshToken = jwt.sign(

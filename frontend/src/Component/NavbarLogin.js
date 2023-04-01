@@ -25,9 +25,13 @@ const NavbarLogin = (props) => {
         <a className="navbar-brand text-light" href="#">
           Your Logo
         </a>
-        <button onClick={logout} className="navbar-brand text-light">
-          logout
-        </button>
+        <div className="d-flex">
+          {' '}
+          <a className=" navbar-brand text-light ">{props.name}</a>
+          <a onClick={logout} className="btn navbar-brand text-light">
+            logout
+          </a>
+        </div>
       </div>
     </nav>
   );

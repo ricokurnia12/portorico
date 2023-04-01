@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Bglogin from '../Assets/bglogin.png';
 import baseUrl from '../baseUrl';
 import axios from 'axios';
+import jwtDecode from 'jwt-decode';
+
 import { useNavigate } from 'react-router-dom';
 
 import baseDirectory from '../baseDirectory';
@@ -9,13 +11,28 @@ import NavbarLogin from '../Component/NavbarLogin';
 import { useForm } from 'react-hook-form';
 
 import './Login.css';
+import NavbarNotLogin from '../Component/NavbarNotLogin';
 
 const Login = () => {
+  useEffect(() => {
+    refreshToken();
+  }, []);
+
+  const [token, setToken] = useState('');
   const navigate = useNavigate();
   const [msg, setMsg] = useState(false);
   const { register, handleSubmit } = useForm({
     defaultValues: {},
   });
+
+  const refreshToken = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/token`);
+      setToken(response.data.accessToken);
+      const decoded = jwtDecode(response.data.accessToken);
+      navigate(`/${baseDirectory}/dashboard`);
+    } catch {}
+  };
 
   const handleLogin = async (data) => {
     console.log(data);
@@ -39,7 +56,7 @@ const Login = () => {
         height: '100vh',
       }}
     >
-      <NavbarLogin />
+      <NavbarNotLogin />
       <div className="bg-login container-fluid vh-100 d-flex justify-content-center position-relative ">
         <div
           className="container p-5 "

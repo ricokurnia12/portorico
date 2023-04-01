@@ -7,6 +7,7 @@ import axios from 'axios';
 import baseUrl from '../baseUrl';
 import baseDirectory from '../baseDirectory';
 import { useNavigate } from 'react-router-dom';
+import NavbarNotLogin from '../Component/NavbarNotLogin';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Register = () => {
         height: '100vh',
       }}
     >
-      <NavbarLogin />
+      <NavbarNotLogin />
       <div className="container-fluid vh-100 d-flex justify-content-center position-relative ">
         <div
           className="container p-5 "
