@@ -14,7 +14,7 @@
   z-index: 999;
   position: relative;
 
-  /* overflow: hidden; */
+  overflow: hidden;
   /* z-index: 999; */
 }
 .top_section {
@@ -86,7 +86,7 @@
 }
 
 main {
-  width: 96vw;
+  width: 100vw;
   padding: 0px;
   z-index: 999;
   /* position: absolute; */

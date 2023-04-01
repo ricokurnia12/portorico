@@ -70,7 +70,7 @@ const Dashboard = () => {
     <>
       <SidebarAdmin>
         <NavbarLogin name={name} />
-        <div className="container-fluid ">
+        <div className="container">
           {' '}
           <div>Halo : {name}</div>;
           <button className="btn btn-danger" onClick={getUsers}>
